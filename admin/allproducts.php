@@ -163,13 +163,14 @@ if (!isset($_SESSION['admin_id'])) {
                         <td> $insert_date </td>
                        
                         <td>
-                            <input type='submit' class='bg-warning px-5 py-2 rounded-pill border-0' name='update_cart' value='Update'>
+                            
                             <input type='submit' class='bg-danger px-5 py-2 rounded-pill border-0 text-white' value='Remove'>
                         </td>
                     </tr>";
                 }
 
                 ?>
+                <!--  <input type='submit' class='bg-warning px-5 py-2 rounded-pill border-0' name='update_cart' value='Update'> -->
             </tbody>
         </table>
 

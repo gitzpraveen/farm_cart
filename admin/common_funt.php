@@ -53,7 +53,7 @@ function  getproducts()
 
 function cart()
 {
- 
+
     if (isset($_GET['add_to_cart'])) {
         global $conn;
         $id = $_SESSION['users_id'];
@@ -62,17 +62,16 @@ function cart()
         $select_query = "Select * from `orders` WHERE user_id=$id && product_id='$get_product_id'";
         $result_query = mysqli_query($conn, $select_query);
         $num_of_rows = mysqli_num_rows($result_query);
-       
+
 
         if ($num_of_rows > 0) {
             echo "<script>alert('Item  already added!')</script>";
             echo "<script>window.open('products.php','_self')</script>";
         } else {
-                 $insert_query = "INSERT INTO `orders` (product_title, product_id, user_id) VALUES ('$get_product_title',$get_product_id,$id)";
-              $result_query = mysqli_query($conn, $insert_query);//this is the 72 line get error 
-                echo "<script>alert('Item added to your Cart!')</script>";
-                echo "<script>window.open('products.php','_self')</script>";
-          
+            $insert_query = "INSERT INTO `orders` (product_title, product_id, user_id) VALUES ('$get_product_title',$get_product_id,$id)";
+            $result_query = mysqli_query($conn, $insert_query); //this is the 72 line get error 
+            echo "<script>alert('Item added to your Cart!')</script>";
+            echo "<script>window.open('products.php','_self')</script>";
         }
     }
 }
@@ -162,5 +161,84 @@ function get_address_ById()
         return $row_data['user_address']; // Return the username
     } else {
         return null; // User not found or error occurred
+    }
+}
+
+function search_product()
+{
+
+    if (isset($_GET['search'])) {
+        global $conn;
+
+        $get_product_key = $_GET['search'];
+
+        $select_query = "Select * from `products` WHERE product_keyword='$get_product_key' ";
+        $result_query = mysqli_query($conn, $select_query);
+        $count_row= mysqli_num_rows($result_query);
+
+        if ($count_row>0) {
+
+            while ($row = mysqli_fetch_assoc($result_query)) {
+                $product_title = $row['product_title'];
+                $product_Description = $row['product_Description'];
+                $product_price = $row['product_price'];
+                $product_image = $row['product_image'];
+                $product_id = $row['product_id'];
+
+
+                echo "
+               
+                <div class='col-md-3 '>
+                <div class='card cd  prod' style='width: 18rem;'>
+                    <img src='./admin/product_images/$product_image' class='card-img-top' alt='$product_title''> 
+                    <div class='card-body'>
+                    <h5 class='card-title'>$product_title</h5>
+                    <p class='card-text'> $product_Description</p>
+                    <a href='search_product.php?to_cart=$product_id&product_title=$product_title' class='btn btn-primary'>Add to Cart</a>
+                    <span  class='btn btn-success rupee'><i class='fa-solid fa-indian-rupee -sign'></i>$product_price</span>
+                    </div>
+                </div>
+            
+            </div> ";
+            }
+        }
+        else{
+            echo "
+            <div class='col-md-12 mt-5  text-center alert alert-danger'>
+            <h2 '> Result : $get_product_key   </h2>
+
+            </div>
+
+            <div class='col-md-12 mt-5 text-center'>
+            <h2>  $get_product_key  not available, Out of stock.</h2>
+
+            </div>
+            ";
+        }
+    }
+}
+
+function to_cart()
+{
+
+    if (isset($_GET['to_cart'])) {
+        global $conn;
+        $id = $_SESSION['users_id'];
+        $get_product_id = $_GET['to_cart'];
+        $get_product_title = $_GET['product_title'];
+        $select_query = "Select * from `orders` WHERE user_id=$id && product_id='$get_product_id'";
+        $result_query = mysqli_query($conn, $select_query);
+        $num_of_rows = mysqli_num_rows($result_query);
+
+
+        if ($num_of_rows > 0) {
+            echo "<script>alert('Item  already added!')</script>";
+            echo "<script>window.open('products.php','_self')</script>";
+        } else {
+            $insert_query = "INSERT INTO `orders` (product_title, product_id, user_id) VALUES ('$get_product_title',$get_product_id,$id)";
+            $result_query = mysqli_query($conn, $insert_query); //this is the 72 line get error 
+            echo "<script>alert('Item added to your Cart!')</script>";
+            echo "<script>window.open('products.php','_self')</script>";
+        }
     }
 }

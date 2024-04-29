@@ -70,11 +70,12 @@ if (!isset($_SESSION['admin_id'])) {
 
                 <thead>
                     <tr>
-                        <th scope="col">User</th>
+                        <th scope="col">User Name</th>
                         <th scope="col">Product Title</th>
                         <th scope="col">Product Image</th>
                         <th scope="col"> <i class='fa-solid fa-indian-rupee-sign'></i> Price </th>
                         <th scope="col">ordered date</th>
+                        <th scope="col">Address</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -94,10 +95,11 @@ if (!isset($_SESSION['admin_id'])) {
                         $price_title = $row_product_price['product_title'];
                         $product_image = $row_product_price['product_image'];
 
-                        $user_query = "Select user_name from `user_table` where user_id= $user_id";
+                        $user_query = "Select * from `user_table` where user_id= $user_id";
                         $user_result=mysqli_query($conn, $user_query);
                         if ($row = mysqli_fetch_assoc($user_result)) {
                             $username= $row["user_name"];
+                            $address= $row["user_address"];
 
                         }
                         ?>
@@ -108,6 +110,7 @@ if (!isset($_SESSION['admin_id'])) {
                                 <td><img src="./product_images/<?php echo $product_image ?>" alt=" $product_image" class="cart_img"></td>
                                 <td> <i class='fa-solid fa-indian-rupee-sign'></i> <?php echo $price_table ?></td>
                                 <td><?php echo $date ?></td>
+                                <td><?php echo $address ?></td>
 
                             </tr>
 

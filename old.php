@@ -288,12 +288,12 @@ session_start();
                 <li><a href="#"><?php echo getUsernameById(); ?></a></li>
             </ul>
 
-            <i class="uil uil-search search-icon" id="searchIcon"></i>
+            <!-- <i class="uil uil-search search-icon" id="searchIcon"></i>
             <div class="search-box">
                 <i class="uil uil-search search-icon"></i>
                 <input type="search" placeholder="Search here..." />
                 <button type="submit" name="searchdata" class="btn">Search</button>
-            </div>
+            </div> -->
         </nav>
     </header>
 

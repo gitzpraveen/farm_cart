@@ -121,12 +121,13 @@ if (!isset($_SESSION['admin_id'])) {
 
             <thead>
                 <tr>
-                    <th scope="col">Select</th>
+                    <!-- <th scope="col">Select</th> -->
                     <th scope="col">Name</th>
                     <th scope="col">Email</th>
                     <th scope="col">Phone</th>
                     <th scope="col">Gender</th>
-                    <th colspan="2">Operation</th>
+                    <th scope="col">Address</th>
+                   
 
             </thead>
             <tbody>
@@ -144,24 +145,26 @@ if (!isset($_SESSION['admin_id'])) {
                     $password = $row['user_password'];
                     $phone = $row['phone'];
                     $gender = $row['gender'];
+                    $address = $row['user_address'];
                     $user_id = $row['user_id'];
 
                 ?>
 
 
                     <tr>
-                        <th scope="row"><input type="checkbox" name="remove_item[]" value="<?php echo $user_id ?>"></th>
+                        <!-- <th scope="row"><input type="checkbox" name="remove_item[]" value="<?php echo $user_id ?>"></th> -->
                         <td><?php echo $name ?> </td>
                         <td> <?php echo $email ?> </td>
                         <td><?php echo $phone ?> </td>
                         <td> <?php echo $gender ?> </td>
+                        <td> <?php echo $address ?> </td>
 
-                        <td>
+                        <!-- <td>
                         
                             <input type="submit" class="bg-danger px-5 py-2 rounded-pill border-0 text-white" name="remove_user" value="Remove">
 
 
-                        </td>
+                        </td>  -->
 
                     </tr>
 

@@ -161,8 +161,9 @@ include('./admin/common_funt.php');
 
     .mess h2 {
 
-      margin-left: 450px;
+      margin-left: 150px;
       margin-bottom: 50px;
+      margin-top: 20px;
     }
 
     .rounded-pill {
@@ -176,11 +177,22 @@ include('./admin/common_funt.php');
       margin-left: 550px;
       color: red;
     }
+  
 
     .btn-warning
     {
       margin-left: 700px;
       margin-bottom: 50px;
+    }
+
+    .danger
+    {
+      color: red;
+    }
+
+    .mess .address
+    {
+      margin-left: 600px;
     }
   </style>
 
@@ -199,7 +211,7 @@ include('./admin/common_funt.php');
 
       <ul class="nav-links">
         <i class="uil uil-times navCloseBtn"></i>
-        <li><a href="index.php">Home</a></li>
+        <li><a href="home.php">Home</a></li>
         <li><a href="products.php">Products</a></li>
         <li><a href="index.php#section2">Shop by crop</a></li>
       </ul>
@@ -212,10 +224,10 @@ include('./admin/common_funt.php');
   <!--  success message-->
 
   <div class="mess">
-    <h1 class="amt"> Amount Paid : <i class='fa-solid fa-indian-rupee -sign'></i> <?php total_cart_price() ?> /-</h1>
-    <h2>payment successful, Order will reach soon...</h2>
+    <h1 class="amt">Total Amount : <i class='fa-solid fa-indian-rupee -sign'></i> <?php total_cart_price() ?> /-</h1>
+    <h2>Any queries after payment , please contact customer support dail <i class="fa-solid fa-phone danger"></i> 1800 2656 287</h2>
     <p>
-    <h2>Address : <?php echo get_address_ById() ?></h2>
+    <h2 class="address">Address : <?php echo get_address_ById() ?></h2>
     </p>
 
     <form action="" method="post">

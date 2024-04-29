@@ -673,13 +673,13 @@ if (!isset($_SESSION['email'])) {
         <li><a href="logout.php">Logout</a></li>
         <li><a href="#"><?php echo getUsernameById(); ?></a></li>
       </ul>
-
+<!-- 
       <i class="uil uil-search search-icon" id="searchIcon"></i>
       <div class="search-box">
         <i class="uil uil-search search-icon"></i>
         
         <input type="search" placeholder="Search here..."  />
-        <button type="submit" name="searchdata"  class="btn">Search</button>
+        <button type="submit" name="searchdata"  class="btn">Search</button> -->
       </div>
     </nav>
   </header>
@@ -698,7 +698,7 @@ if (!isset($_SESSION['email'])) {
   <div class="containerscard1 seedcon">
 
     <div class="con con1 seed">
-      <a href="">
+      <a href="search_product.php?search=seed">
         <div class="card">
           <img src="./seed.jpeg" alt="seed">
           <h2>seeds</h2>
@@ -707,7 +707,7 @@ if (!isset($_SESSION['email'])) {
     </div>
 
     <div class="con seed">
-      <a href="">
+      <a href="search_product.php?search=tool">
         <div class="card">
           <img src="./tool.jpg" alt="tool">
           <h2>Tools</h2>
@@ -715,17 +715,17 @@ if (!isset($_SESSION['email'])) {
       </a>
     </div>
 
-    <div class="con seed">
-      <a href="">
+    <!-- <div class="con seed">
+      <a href="search_product?search=pesticide">
         <div class="card">
-          <img src="./tracktor.webp" alt="tracktor">
+          <img src="./pesticides.jpg" alt="tracktor">
           <h2>Rent4farm</h2>
         </div>
       </a>
-    </div>
+    </div> -->
 
     <div class="con seed">
-      <a href="">
+      <a href="search_product.php?search=fertilizer">
         <div class="card">
           <img src="./fertlizer.jpeg" alt="fertlizer">
           <h2>Fertilizers</h2>
@@ -733,7 +733,7 @@ if (!isset($_SESSION['email'])) {
       </a>
     </div>
     <div class="con seed">
-      <a href="">
+      <a href="search_product.php?search=plant">
         <div class="card">
           <img src="./tissue.jpeg" alt="">
           <h2>Plants</h2>
@@ -742,7 +742,7 @@ if (!isset($_SESSION['email'])) {
     </div>
 
     <div class="con seed">
-      <a href="">
+      <a href="search_product.php?search=feed">
         <div class="card">
           <img src="./feed.jpeg" alt="">
           <h2>Animal Feed</h2>
@@ -751,6 +751,9 @@ if (!isset($_SESSION['email'])) {
     </div>
 
   </div>
+
+  
+ 
 
   <!--  cards ends -->
 
@@ -855,7 +858,7 @@ if (!isset($_SESSION['email'])) {
       <div class="containerscard1 cdd">
 
         <div class="con con1">
-          <a href="">
+          <a href="search_product.php?search=chilli">
             <div class="card">
               <img src="./chilli.png" alt="chilli">
               <h2>Chilli</h2>
@@ -864,7 +867,7 @@ if (!isset($_SESSION['email'])) {
         </div>
 
         <div class="con">
-          <a href="">
+          <a href="search_product.php?search=onion">
             <div class="card">
               <img src="./onion.jpeg" alt="onion">
               <h2>Onion</h2>
@@ -873,7 +876,7 @@ if (!isset($_SESSION['email'])) {
         </div>
 
         <div class="con">
-          <a href="">
+          <a href="search_product.php?search=cotton">
             <div class="card">
               <img src="./cotton.jpeg" alt="cotton">
               <h2>Cotton</h2>
@@ -882,7 +885,7 @@ if (!isset($_SESSION['email'])) {
         </div>
 
         <div class="con">
-          <a href="">
+          <a href="search_product.php?search=groundnut">
             <div class="card">
               <img src="./groundnut.jpeg" alt="groundnut">
               <h2>Groundnut</h2>
@@ -890,7 +893,7 @@ if (!isset($_SESSION['email'])) {
           </a>
         </div>
         <div class="con">
-          <a href="">
+          <a href="search_product.php?search=maize">
             <div class="card">
               <img src="./maize.jpeg" alt="maize">
               <h2>Maize</h2>
